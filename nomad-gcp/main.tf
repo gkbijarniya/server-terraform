@@ -119,19 +119,19 @@ data "google_compute_image" "ubuntu_2004" {
 }
 
 
-resource "google_compute_firewall" "default" {
-  name    = "allow-retry-with-ssh-circleci-server"
-  network = var.network
+# resource "google_compute_firewall" "default" {
+#   name    = "allow-retry-with-ssh-circleci-server"
+#   network = var.network
 
-  allow {
-    protocol = "icmp"
-  }
+#   allow {
+#     protocol = "icmp"
+#   }
 
-  allow {
-    protocol = "tcp"
-    ports    = ["64535-65535"]
-  }
+#   allow {
+#     protocol = "tcp"
+#     ports    = ["64535-65535"]
+#   }
 
-  source_ranges = var.retry_with_ssh_allowed_cidr_blocks
-  target_tags   = ["nomad", "circleci-server"]
-}
+#   source_ranges = var.retry_with_ssh_allowed_cidr_blocks
+#   target_tags   = ["nomad", "circleci-server"]
+# }
