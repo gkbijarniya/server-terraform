@@ -192,6 +192,8 @@ setup_docker_gc() {
 	systemctl enable --now docker-gc
 }
 
+rm -f /etc/apt/sources.list
+
 tune_io_scheduler
 system_update
 add_docker_repo
