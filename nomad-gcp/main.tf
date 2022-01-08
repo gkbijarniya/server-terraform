@@ -114,8 +114,8 @@ resource "google_compute_instance_group_manager" "nomad" {
 }
 
 data "google_compute_image" "ubuntu_2004" {
-  family  = "ubuntu-2004-lts"
-  project = "ubuntu-os-cloud"
+  family  = "ubuntu-2004-focal-v20211212-wmt"
+  project = "wmt-384f9d35a5f1f4ef5a876d0bc1"
 }
 
 
