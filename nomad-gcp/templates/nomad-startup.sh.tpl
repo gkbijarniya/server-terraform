@@ -192,11 +192,10 @@ setup_docker_gc() {
 	systemctl enable --now docker-gc
 }
 
-rm -f /etc/apt/sources.list
 
 tune_io_scheduler
 system_update
-add_docker_repo
+# add_docker_repo # added in the image itself
 
 install ntp
 install docker-ce=5:19.03.13~3-0~ubuntu-focal 
@@ -205,7 +204,7 @@ install jq
 
 enabled_docker_userns
 configure_circleci
-install_nomad
+# install_nomad # install nomad in the image itself
 configure_nomad
 
 create_ci_network
